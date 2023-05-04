@@ -1,0 +1,32 @@
+###FIND ALL
+
+GET http://localhost:8080/plane/all
+
+###ADD
+
+POST http://localhost:8080/plane/add
+Content-Type: application/json
+
+{
+  "model" : "Boeing 737",
+  "companyName" : "Boeing"
+}
+
+###FIND BY ID
+
+GET http://localhost:8080/plane/find/2ac85539-683a-4393-87e6-b24e31bb8edb
+
+###UPDATE
+
+PUT http://localhost:8080/plane/update
+Content-Type: application/json
+
+{
+  "id" : "424906cd-e688-466f-94d1-a1586472e5b2",
+  "model" : "Boeing 737",
+  "companyName" : "Boeing"
+}
+
+###DELETE
+
+DELETE http://localhost:8080/plane/delete/7f98ef07-972c-4a10-a829-09878bb145ef

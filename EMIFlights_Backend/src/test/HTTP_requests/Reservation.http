@@ -1,0 +1,47 @@
+GET http://localhost:8080/reservation/all
+
+###
+
+POST http://localhost:8080/reservation/add
+Content-Type: application/json
+
+{
+  "passengerLastName" : "Fajoui",
+  "passengerFirstName": "Anas",
+  "passengerCivility": {
+    "code" : "Mr"
+  },
+  "passengerAgeGroup" : {
+    "code" : "AD"
+  },
+  "seatClass" : {
+    "code" : "ECO"
+  },
+  "seatNumber" : "15-L",
+  "reservationStatus" : {
+    "code" : "SCHD"
+  },
+  "price" : 5000,
+  "flight" : {
+    "id" : "57dde4ca-a291-44f8-aee7-a55c8d8b5dd1"
+  },
+  "user": {
+    "id": "06f19315-e40e-4099-857f-2367e0664d61"
+  }
+}
+
+###
+
+POST http://localhost:8080/reservation/modify?seat_number=11
+Content-Type: application/json
+
+{
+  "id" : "2c2c1bee-8425-49b7-8206-980e02a22df2",
+  "code" : "rda"
+}
+
+### GET RESERVATIONS OF FLIGHT AND CLASS
+
+GET http://localhost:8080/reservation/find-by-flight-and-class/57dde4ca-a291-44f8-aee7-a55c8d8b5dd1/ECO
+
+

@@ -1,0 +1,19 @@
+GET http://localhost:8080/user/all
+
+###
+
+POST http://localhost:8080/user/add
+Content-Type: application/json
+
+{
+  "firstName" : "name 3"
+}
+
+###
+
+POST http://localhost:8080/user/modify_lN?last_name=bettaoui
+Content-Type: application/json
+
+{
+  "id" : "8e098445-9899-4e09-81f1-5c01b70dc5c4"
+}

@@ -1,0 +1,49 @@
+<div class="my-reservations-container">
+  <h1>My Reservations</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>Code</th>
+      <th>Flight</th>
+      <th>Class</th>
+      <th>Passenger Name</th>
+      <th>Status</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngIf="reservations && reservations.length > 0; else noReservations">
+      <tr *ngFor="let reservation of reservations" class="hover-row" (mouseenter)="hoveredRow = reservation" (mouseleave)="hoveredRow = undefined" (click)="showReservationDetails(reservation)" [ngClass]="{'selected': selectedReservation === reservation}">
+        <td>{{ reservation.code }}</td>
+        <td>{{ reservation.flight.flightGeneric.departureAirport.city }} ✈ {{ reservation.flight.flightGeneric.arrivalAirport.city }}</td>
+        <td>{{ reservation.seatClass.label }}</td>
+        <td>{{ reservation.passengerFirstName }} {{ reservation.passengerLastName }}</td>
+        <td>{{ reservation.reservationStatus.label }}</td>
+        <td>{{ reservation.price }}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+  <ng-template #noReservations>
+    <p>You have no reservations yet.</p>
+  </ng-template>
+
+  <div *ngIf="selectedReservation" class="popup">
+    <div class="popup-content">
+      <span class="close" (click)="closeReservationDetails()">&times;</span>
+      <h2>Reservation Details</h2>
+      <div>
+        <p><strong>creationDate:</strong> {{ selectedReservation.creationDate }}</p>
+        <p><strong>Flight:</strong> {{ selectedReservation.flight.flightGeneric.departureAirport.city }} ✈ {{ selectedReservation.flight.flightGeneric.arrivalAirport.city }}</p>
+        <p><strong>depTerminal ✈ arrTerminal:</strong> {{ selectedReservation.flight.flightGeneric.departureTerminal.label }} ✈ {{ selectedReservation.flight.flightGeneric.arrivalTerminal.label }}</p>
+        <p><strong>departureHour ✈ arrivalHourHour:</strong> {{ selectedReservation.flight.flightGeneric.departureHour }} ✈ {{ selectedReservation.flight.flightGeneric.arrivalHour }}</p>
+        <p><strong>Plane:</strong> {{ selectedReservation.flight.flightGeneric.plane.model}}</p>
+        <p><strong>Class:</strong> {{ selectedReservation.seatClass.label }}</p>
+        <p><strong>seatNumber:</strong> {{ selectedReservation.seatNumber}}</p>
+        <p><strong>Status:</strong> {{ selectedReservation.reservationStatus.label }}</p>
+        <p><strong>Price:</strong> {{ selectedReservation.price }}</p>
+        <p><strong>Passenger Name:</strong> {{ selectedReservation.passengerFirstName }} {{ selectedReservation.passengerLastName }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+###FIND ALL
+
+GET http://localhost:8080/flightstatus/all
+
+###ADD
+
+POST http://localhost:8080/flightstatus/add
+Content-Type: application/json
+
+{
+  "code" : "CANC",
+  "label" : "Canceled"
+}

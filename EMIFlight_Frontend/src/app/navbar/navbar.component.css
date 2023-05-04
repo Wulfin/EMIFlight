@@ -1,0 +1,129 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(to bottom, #f1f2f6, #dfe4ea);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.38);
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.title {
+  font-family: "Lobster", cursive;
+  font-weight: 600;
+  color: #324b79;
+  text-decoration: snow;
+  text-decoration-color: #3a517e;
+  text-decoration-thickness: 2px;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.title_hover:hover {
+  cursor: pointer;
+  transform: scale(1.00);
+  transition: all 0.3s ease-in-out;
+  font-size: 17px;
+}
+
+
+.title a {
+  color: #353746;
+  text-decoration: none;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #353746;
+  text-decoration: none;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex; /* Ajout de display flex */
+  justify-content: center; /* Centrage horizontal */
+  margin-top: 13px;
+  cursor: pointer;
+}
+
+.nav__links li {
+  padding: 0px 10px;
+}
+
+.nav__links li a {
+  transition: color 0.3s ease 0s;
+  position: relative;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+.nav__links li a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0088a9;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: left;
+}
+
+.nav__links li a:hover::before {
+  transform: scaleX(1);
+}
+
+.cta {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #353746;
+}
+
+.cta:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #f7f1e3, #e5d6b9);
+  z-index: -1;
+  transition: transform 0.3s ease-in-out;
+  transform: scale(0.8);
+  border-radius: 50px;
+}
+
+.cta:hover::before {
+  transform: scale(1);
+}
+
+.nav__links li:last-child {
+  margin-left: auto;
+
+}
+
+
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+  }
+}

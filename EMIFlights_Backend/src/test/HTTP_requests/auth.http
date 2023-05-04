@@ -1,0 +1,7 @@
+POST http://localhost:8080/auth/authenticate
+Content-Type: application/json
+
+{
+  "username":"anas",
+  "password":"password_2"
+}

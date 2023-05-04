@@ -1,0 +1,11 @@
+###SEARCH
+
+GET http://localhost:8080/flight/search?depAirport=CMN&arrAirport=CDG&depDate=2023-01-02
+
+###FIND ALL
+
+GET http://localhost:8080/flight/all
+
+###FIND BY ID
+
+GET http://localhost:8080/flight/find/57dde4ca-a291-44f8-aee7-a55c8d8b5dd1

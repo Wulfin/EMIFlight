@@ -1,0 +1,44 @@
+GET http://localhost:8080/plane/all
+
+###
+
+POST http://localhost:8080/plane/add
+Content-Type: application/json
+
+{
+  "model" : "qwer"
+}
+
+###
+
+GET http://localhost:8080/seat/all
+
+###
+
+POST http://localhost:8080/seat/add/4/3/2/1
+Content-Type: application/json
+
+{
+  "id" : 8,
+  "plane" : {
+    "model" : "xd",
+    "seats" : []
+  }
+}
+
+###
+
+PUT http://localhost:8080/plane/update
+Content-Type: application/json
+
+{
+  "model" : "fjwi"
+}
+
+###
+
+GET http://localhost:8080/plane/find/1
+
+###
+
+DELETE http://localhost:8080/plane/delete/88535b64-6920-46c4-9370-cae73ceb5d09

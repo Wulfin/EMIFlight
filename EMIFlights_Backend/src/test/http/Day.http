@@ -1,0 +1,13 @@
+###FIND ALL
+
+GET http://localhost:8080/day/all
+
+###ADD
+
+POST http://localhost:8080/day/add
+Content-Type: application/json
+
+{
+  "code" : "F",
+  "label" : "Thursday"
+}

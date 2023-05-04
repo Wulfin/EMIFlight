@@ -1,0 +1,35 @@
+###FIND ALL
+
+GET http://localhost:8080/airport/all
+
+###ADD
+
+POST http://localhost:8080/airport/add
+Content-Type: application/json
+
+{
+  "code" : "ORY",
+  "label" : "Paris Orly Airport ",
+  "city" : "Paris",
+  "country" : "France"
+}
+
+###FIND BY CODE
+
+GET http://localhost:8080/airport/find/CMN
+
+###UPDATE
+
+PUT http://localhost:8080/airport/update
+Content-Type: application/json
+
+{
+  "code" : "CDG",
+  "label" : "Paris Charles de Gaulle Airport",
+  "city" : "Paris",
+  "country" : "France"
+}
+
+###DELETE
+
+DELETE http://localhost:8080/airport/delete/CDG

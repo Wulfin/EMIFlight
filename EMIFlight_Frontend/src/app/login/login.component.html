@@ -1,0 +1,148 @@
+<!--
+
+<div class="container" id="container">
+  <div class="form-container sign-in-container">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <h1>Sign in</h1>
+
+      <span>your account</span>
+      <input ngModel name="username" type="text" placeholder="Enter your username">
+      <input ngModel name="password" type="password" placeholder="Enter your Password">
+      <a >Forgot your password?</a>
+      <button type="submit" class="btn-light">Sign In</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Welcome Back!</h1>
+        <p>To keep connected with us please login with your personal info</p>
+        <button class="ghost" id="signIn">Sign In</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Hello, Friend!</h1>
+        <p>Enter your personal details and start journey with us</p>
+        <button type="button" class="btn-light" data-toggle="modal" data-target="#exampleModalLong">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>
+    Created with <i class="fa fa-heart"></i> by
+    <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+    - Read how I created this and how you can join the challenge
+    <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+  </p>
+</footer>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form (ngSubmit)="onSubmit2(form)" #form="ngForm">
+
+
+          <input ngModel name="firstname" type="text" class="form-control me-2" placeholder="Enter your first name">
+          <br>
+
+
+          <input ngModel name="lastname" type="text" class="form-control me-2" placeholder="Enter your last name">
+          <br>
+
+
+          <input ngModel name="usernameR" type="text" class="form-control me-2" placeholder="Enter your username">
+          <br>
+
+
+          <input ngModel name="passwordR" type="password" class="form-control" id="exampleInputPassword2" placeholder="Enter your Password">
+          <br>
+
+          <button type="submit" #myModalClose class="close" class="btn btn-light close">Sign up</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Styling a SignUp Form</title>
+  <link rel="stylesheet" href="login.component.css">
+</head>
+<body>
+<div class="signupFrm">
+  <div class="wrapper">
+    <form *ngIf="!isSignUpForm" (ngSubmit)="onSubmit(f)" #f="ngForm" class="form">
+      <h1 class="title">Login</h1>
+
+      <div class="inputContainer">
+        <input ngModel name="username" type="text" class="input" placeholder="Enter your username">
+        <label  class="label">Username</label>
+      </div>
+
+      <div class="inputContainer">
+        <input ngModel name="password" class="input" type="password" placeholder="Enter your Password">
+        <label  class="label">Password</label>
+      </div>
+      <span>You don't have an account ? <button class="btn" (click)="isSignUpForm=true">Sign up</button></span>
+
+      <input type="submit" class="submitBtn" value="Login">
+    </form>
+
+    <form *ngIf="isSignUpForm" (ngSubmit)="onSubmit2(form)" #form="ngForm">
+      <h1 class="title">Sign up</h1>
+
+      <div class="inputContainer">
+        <input ngModel name="firstname" type="text" class="input" placeholder="Enter your firstname">
+        <label  class="label">Firstname</label>
+      </div>
+
+      <div class="inputContainer">
+        <input ngModel name="lastname" type="text" class="input" placeholder="Enter your lastname">
+        <label  class="label">Lastname</label>
+      </div>
+
+      <div class="inputContainer">
+        <input ngModel name="email" type="text" class="input" placeholder="Enter your email">
+        <label  class="label">Email</label>
+      </div>
+
+      <div class="inputContainer">
+        <input ngModel name="adress" type="text" class="input" placeholder="Enter your adress">
+        <label  class="label">Adress</label>
+      </div>
+
+      <div class="inputContainer">
+        <input ngModel name="usernameR" type="text" class="input" placeholder="Enter your username">
+        <label  class="label">Username</label>
+      </div>
+
+      <div class="inputContainer">
+        <input ngModel name="passwordR" class="input" type="password" placeholder="Enter your Password">
+        <label  class="label">Password</label>
+      </div>
+
+      <span>You already have an account ? <button class="btn" (click)="isSignUpForm=false">Log in</button></span>
+
+      <input type="submit" class="submitBtn" value="Sign up">
+    </form>
+
+  </div>
+</div>
+</body>
+</html>

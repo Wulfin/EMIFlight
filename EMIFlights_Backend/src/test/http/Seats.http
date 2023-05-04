@@ -1,0 +1,76 @@
+###FIND ALL
+
+GET http://localhost:8080/seats/all
+
+###ADD FST
+
+POST http://localhost:8080/seats/add
+Content-Type: application/json
+
+{
+  "plane" : {
+    "id" : "4e1d4f72-4bec-4931-86bb-507444ad1466"
+  },
+  "seatClass" : {
+    "code" : "FST"
+  },
+  "numberOfSeats" : 24
+}
+
+###ADD BUSI
+
+POST http://localhost:8080/seats/add
+Content-Type: application/json
+
+{
+  "plane" : {
+    "id" : "4e1d4f72-4bec-4931-86bb-507444ad1466"
+  },
+  "seatClass" : {
+    "code" : "BUSI"
+  },
+  "numberOfSeats" : 100
+}
+
+###ADD ECO
+
+POST http://localhost:8080/seats/add
+Content-Type: application/json
+
+{
+  "plane" : {
+    "id" : "4e1d4f72-4bec-4931-86bb-507444ad1466"
+  },
+  "seatClass" : {
+    "code" : "ECO"
+  },
+  "numberOfSeats" : 230
+}
+
+###FIND BY ID
+
+GET http://localhost:8080/seats/find/fa878572-0d09-4b36-9830-689a3f0dcbec
+
+###UPDATE
+
+PUT http://localhost:8080/seats/update
+Content-Type: application/json
+
+{
+  "id" : "fa878572-0d09-4b36-9830-689a3f0dcbec",
+  "plane" : {
+    "id" : "424906cd-e688-466f-94d1-a1586472e5b2"
+  },
+  "seatClass" : {
+    "code" : "ECO"
+  },
+  "numberOfSeats" : 100
+}
+
+###DELETE
+
+DELETE http://localhost:8080/seats/delete/479daa73-7b4e-4ef7-9fa0-5f2c209d261c
+
+###GET NUMBER OF SEATS
+
+GET http://localhost:8080/seats/get-number-of-seats/b648f205-1ce0-4aed-bf2d-f4e63ac2f4a4/FST

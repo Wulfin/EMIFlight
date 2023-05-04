@@ -1,0 +1,40 @@
+###FIND ALL
+
+GET http://localhost:8080/terminal/all
+
+###ADD
+
+POST http://localhost:8080/terminal/add
+Content-Type: application/json
+
+{
+  "code" : "CDG-2B",
+  "label" : "Paris Charles de Gaulle Airport Terminal 2B",
+  "airport" : {
+    "code" : "CDG"
+  }
+}
+
+###FIND BY ID
+
+GET http://localhost:8080/terminal/find/fa878572-0d09-4b36-9830-689a3f0dcbec
+
+###UPDATE
+
+PUT http://localhost:8080/terminal/update
+Content-Type: application/json
+
+{
+  "id" : "fa878572-0d09-4b36-9830-689a3f0dcbec",
+  "plane" : {
+    "id" : "424906cd-e688-466f-94d1-a1586472e5b2"
+  },
+  "_class" : {
+    "code" : "ECO"
+  },
+  "numberOfterminal" : 100
+}
+
+###DELETE
+
+DELETE http://localhost:8080/terminal/delete/479daa73-7b4e-4ef7-9fa0-5f2c209d261c

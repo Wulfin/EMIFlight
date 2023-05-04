@@ -1,0 +1,123 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.small-refresh-btn {
+  font-size: 0.5rem;
+}
+
+
+.my-reservations-container {
+  margin: 20px;
+}
+
+.popup {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+}
+
+.popup-content .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.my-reservations-container table tbody tr:hover {
+  cursor: pointer;
+  transform: scale(1.00);
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(23, 229, 172, 0.33);
+
+}
+
+.my-reservations-container table tbody tr.selected {
+  background-color: #f2f2f2;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.popup-content p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.popup-content .btn {
+  margin-right: 10px;
+}
+
+.popup-content .btn:last-child {
+  margin-right: 0;
+}
+
+.popup-content .buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.popup-content .alert {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.popup-content .alert strong {
+  font-weight: bold;
+}
+
+.popup-content .success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.popup-content .success strong {
+  font-weight: bold;
+}
